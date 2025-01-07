@@ -26,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\arnaud.bury\Desktop\Bachelorproef\BPTestProject\BP_Document_Generation\BP_Document_Generation
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/arnaud.bury/Desktop/Bachelorproef/BPTestProject/BP_Document_Generation/BP_Document_Generation/Views/Document/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/arnaud.bury/Desktop/Bachelorproef/BPTestProject/BP_Document_Generation/BP_Document_Generation/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

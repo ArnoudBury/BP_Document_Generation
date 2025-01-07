@@ -19,6 +19,10 @@ namespace BP_Document_Generation.Services {
             return await _context.OrderDetail.FindAsync(orderDetailId);
         }
 
+        public async Task<List<OrderDetail>> GetOrderDetailsByOrderIdAsync(int orderId) {
+            return await _context.OrderDetail.Where(od => od.OrderID == orderId).ToListAsync();
+        }
+
         public async Task AddOrderDetailAsync(OrderDetail orderDetail) {
             await _context.OrderDetail.AddAsync(orderDetail);
             await _context.SaveChangesAsync();

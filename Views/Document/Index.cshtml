@@ -1,0 +1,22 @@
+﻿@model BP_Document_Generation.ViewModels.DocumentCustomerSelectViewModel
+
+@{
+    ViewData["Title"] = "Generate Customer Order Document";
+}
+
+<h1>Generate Customer Order Document</h1>
+
+@if (ViewBag.Message != null) {
+    <div class="alert alert-info">@ViewBag.Message</div>
+}
+
+<form asp-action="GenerateDocument" method="post">
+    <div class="form-group mb-3">
+        <label for="customerSelect">Customer</label>
+        <select asp-for="SelectedCustomerId" asp-items="Model.Customers" class="form-control" id="customerSelect">
+            <option value="">-- Select a Customer --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Generate Document</button>
+</form>
