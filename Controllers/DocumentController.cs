@@ -1,8 +1,10 @@
 ﻿using BP_Document_Generation.Models;
 using BP_Document_Generation.Services.Interfaces;
 using BP_Document_Generation.ViewModels;
+using DocumentGeneration.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Telerik.Reporting;
 
 namespace BP_Document_Generation.Controllers {
     public class DocumentController : Controller {
@@ -43,8 +45,42 @@ namespace BP_Document_Generation.Controllers {
 
             var viewModel = await GetViewModel(selectedCustomerId);
 
-            return StatusCode(StatusCodes.Status501NotImplemented, "This feature is not implemented yet.");
+            var documentBytes = GenerateTelerikDocument(viewModel);
+
+            return File(documentBytes, "application/pdf", "OrderConfirmation.pdf");
         }
+
+        private byte[] GenerateTelerikDocument(OrderConfirmationViewModel viewModel) {
+
+            // Initialize the report parameters
+            var reportProcessor = new Telerik.Reporting.Processing.ReportProcessor();
+            var deviceInfo = new System.Collections.Hashtable();
+
+            // Unpackage the report
+            Report report = null;
+            using (var sourceStream = System.IO.File.OpenRead("Reports/OrderConfirmation.trdp")) {
+                var reportPackager = new ReportPackager();
+                report = (Report)reportPackager.UnpackageDocument(sourceStream);
+            }
+
+            // Create an ObjectDataSource for the report
+            var objectDataSource = new ObjectDataSource {
+                DataSource = viewModel
+            };
+
+            // Set the report's data source
+            report.DataSource = objectDataSource;
+
+            var instanceReportSource = new InstanceReportSource {
+                ReportDocument = report
+            };
+
+            // Render the report to a byte array (PDF format)
+            var result = reportProcessor.RenderReport("PDF", instanceReportSource, deviceInfo);
+
+            return result.DocumentBytes;
+        }
+
 
         private async Task<OrderConfirmationViewModel?> GetViewModel(int customerId) {
             var customer = await _customerService.GetCustomerByIdAsync(customerId);
@@ -78,7 +114,7 @@ namespace BP_Document_Generation.Controllers {
 
             return new OrderConfirmationViewModel {
                 CustomerID = customer.CustomerID,
-                CustomerName = string.Format("{0} {1}", customer.LastName, customer.FirstName),
+                CustomerName = string.Format("{0} {1}", customer.FirstName, customer.LastName),
                 Email = customer.Email,
                 PhoneNumber = customer.PhoneNumber,
                 OrderID = order.OrderID,
