@@ -52,7 +52,7 @@ namespace BP_Document_Generation.Controllers {
 
         private byte[] GenerateTelerikDocument(OrderConfirmationViewModel viewModel) {
 
-            // Initialize the report parameters
+            // Initialize the report processor
             var reportProcessor = new Telerik.Reporting.Processing.ReportProcessor();
             var deviceInfo = new System.Collections.Hashtable();
 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BP_Document_Generation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d0dcc2da8fca3b89573379010868e1def3bb4bff")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9dcf56135f32106c8a50ff3f4ff59d6cd900688b")]
 [assembly: System.Reflection.AssemblyProductAttribute("BP_Document_Generation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BP_Document_Generation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
