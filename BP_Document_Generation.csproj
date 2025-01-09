@@ -7,6 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="24.2.3" />
+    <PackageReference Include="DevExpress.Reporting.Core" Version="24.2.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.0">
       <PrivateAssets>all</PrivateAssets>
@@ -20,10 +22,6 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
     <PackageReference Include="Telerik.Reporting.Services.AspNetCore.Trial" Version="18.3.24.1218" />
     <PackageReference Include="Telerik.Reporting.Trial" Version="18.3.24.1218" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Reports\" />
   </ItemGroup>
 
   <ItemGroup>

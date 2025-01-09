@@ -13,8 +13,12 @@
         "packagesPath": "C:\\Users\\arnaud.bury\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\arnaud.bury\\Desktop\\Bachelorproef\\BPTestProject\\BP_Document_Generation\\BP_Document_Generation\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 24.2\\Components\\Offline Packages"
+        ],
         "configFilePaths": [
           "C:\\Users\\arnaud.bury\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 24.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://bs-build01.becosoft.eu/guestAuth/app/nuget/feed/_Root/default/v3/index.json": {},
           "https://nuget.telerik.com/v3/index.json": {}
@@ -51,6 +56,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "DevExpress.AspNetCore.Reporting": {
+              "target": "Package",
+              "version": "[24.2.3, )"
+            },
+            "DevExpress.Reporting.Core": {
+              "target": "Package",
+              "version": "[24.2.3, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -116,8 +129,12 @@
         "packagesPath": "C:\\Users\\arnaud.bury\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\arnaud.bury\\Desktop\\Bachelorproef\\BPTestProject\\BP_Document_Generation\\DocumentGeneration.Data\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\DevExpress 24.2\\Components\\Offline Packages"
+        ],
         "configFilePaths": [
           "C:\\Users\\arnaud.bury\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 24.2.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -125,6 +142,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\DevExpress 24.2\\Components\\System\\Components\\Packages": {},
           "https://api.nuget.org/v3/index.json": {},
           "https://bs-build01.becosoft.eu/guestAuth/app/nuget/feed/_Root/default/v3/index.json": {},
           "https://nuget.telerik.com/v3/index.json": {}

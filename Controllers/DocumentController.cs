@@ -1,6 +1,10 @@
 ﻿using BP_Document_Generation.Models;
+using BP_Document_Generation.Reports;
 using BP_Document_Generation.Services.Interfaces;
 using BP_Document_Generation.ViewModels;
+using DevExpress.DataAccess.ObjectBinding;
+using DevExpress.XtraReports;
+using DevExpress.XtraReports.UI;
 using DocumentGeneration.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -45,9 +49,28 @@ namespace BP_Document_Generation.Controllers {
 
             var viewModel = await GetViewModel(selectedCustomerId);
 
-            var documentBytes = GenerateTelerikDocument(viewModel);
+            var documentBytes = GenerateDevExpressReport(viewModel);
 
             return File(documentBytes, "application/pdf", "OrderConfirmation.pdf");
+        }
+
+        private byte[] GenerateDevExpressReport(OrderConfirmationViewModel viewModel) {
+            // Load the report definition
+            var report = new OrderConfirmation();
+
+            // Initialize the report's data source
+            var objectDataSource = new DevExpress.DataAccess.ObjectBinding.ObjectDataSource {
+                DataSource = new[] { viewModel },
+            };
+
+            // Set the data source
+            report.DataSource = objectDataSource;
+
+            // Export the report to a PDF
+            using (var memoryStream = new MemoryStream()) {
+                report.ExportToPdf(memoryStream);
+                return memoryStream.ToArray();
+            }
         }
 
         private byte[] GenerateTelerikDocument(OrderConfirmationViewModel viewModel) {
@@ -64,7 +87,7 @@ namespace BP_Document_Generation.Controllers {
             }
 
             // Create an ObjectDataSource for the report
-            var objectDataSource = new ObjectDataSource {
+            var objectDataSource = new Telerik.Reporting.ObjectDataSource {
                 DataSource = viewModel
             };
 
