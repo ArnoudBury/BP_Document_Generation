@@ -20,6 +20,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.7" />
+    <PackageReference Include="Stimulsoft.Reports.Engine.NetCore" Version="2025.1.2" />
     <PackageReference Include="Telerik.Reporting.Services.AspNetCore.Trial" Version="18.3.24.1218" />
     <PackageReference Include="Telerik.Reporting.Trial" Version="18.3.24.1218" />
   </ItemGroup>

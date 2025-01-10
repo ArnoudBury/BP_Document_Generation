@@ -88,6 +88,10 @@
               "target": "Package",
               "version": "[8.0.7, )"
             },
+            "Stimulsoft.Reports.Engine.NetCore": {
+              "target": "Package",
+              "version": "[2025.1.2, )"
+            },
             "Telerik.Reporting.Services.AspNetCore.Trial": {
               "target": "Package",
               "version": "[18.3.24.1218, )"

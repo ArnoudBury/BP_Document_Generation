@@ -8,6 +8,7 @@ using DevExpress.XtraReports.UI;
 using DocumentGeneration.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Stimulsoft.Report;
 using Telerik.Reporting;
 
 namespace BP_Document_Generation.Controllers {
@@ -49,9 +50,28 @@ namespace BP_Document_Generation.Controllers {
 
             var viewModel = await GetViewModel(selectedCustomerId);
 
-            var documentBytes = GenerateDevExpressReport(viewModel);
+            var documentBytes = GenerateStimulsoftReport(viewModel);
 
             return File(documentBytes, "application/pdf", "OrderConfirmation.pdf");
+        }
+
+        private byte[] GenerateStimulsoftReport(OrderConfirmationViewModel viewModel) {
+            // Load the report definition
+            StiReport report = new StiReport();
+            report.Load("Reports/OrderConfirmation.mrt");
+
+            // Set the report's data source
+            report.RegData("OrderConfirmationViewModel", viewModel);
+            report.RegData("OrderItemViewModel", viewModel.OrderItems);
+
+            // Render the report
+            report.Render();
+
+            // Export the report to a byte array (PDF format)
+            using (var memoryStream = new MemoryStream()) {
+                report.ExportDocument(StiExportFormat.Pdf, memoryStream);
+                return memoryStream.ToArray();
+            }
         }
 
         private byte[] GenerateDevExpressReport(OrderConfirmationViewModel viewModel) {
@@ -119,19 +139,35 @@ namespace BP_Document_Generation.Controllers {
             var orderDetails = await _orderDetailService.GetOrderDetailsByOrderIdAsync(order.OrderID);
 
             List<OrderItemViewModel> OrderItems = new List<OrderItemViewModel>();
-            foreach (var orderDetail in orderDetails) {
-                var product = await _productService.GetProductByIdAsync(orderDetail.ProductID);
-                if (product != null) {
-                    OrderItemViewModel item = new OrderItemViewModel {
-                        ProductID = product.ProductID,
-                        ProductName = product.Name,
-                        Quantity = orderDetail.Quantity,
-                        UnitPrice = product.UnitPrice,
-                        TotalPrice = orderDetail.Quantity * product.UnitPrice
-                    };
-                    OrderItems.Add(item);
+            for (int i = 0; i < 500; i++) {
+                foreach (var orderDetail in orderDetails) {
+                    var product = await _productService.GetProductByIdAsync(orderDetail.ProductID);
+                    if (product != null) {
+                        OrderItemViewModel item = new OrderItemViewModel {
+                            ProductID = product.ProductID,
+                            ProductName = product.Name,
+                            Quantity = orderDetail.Quantity,
+                            UnitPrice = product.UnitPrice,
+                            TotalPrice = orderDetail.Quantity * product.UnitPrice
+                        };
+                        OrderItems.Add(item);
+                    }
                 }
             }
+
+            //foreach (var orderDetail in orderDetails) {
+            //    var product = await _productService.GetProductByIdAsync(orderDetail.ProductID);
+            //    if (product != null) {
+            //        OrderItemViewModel item = new OrderItemViewModel {
+            //            ProductID = product.ProductID,
+            //            ProductName = product.Name,
+            //            Quantity = orderDetail.Quantity,
+            //            UnitPrice = product.UnitPrice,
+            //            TotalPrice = orderDetail.Quantity * product.UnitPrice
+            //        };
+            //        OrderItems.Add(item);
+            //    }
+            //}
 
             var totalPrice = OrderItems.Sum(i => i.TotalPrice);
 
