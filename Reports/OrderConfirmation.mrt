@@ -50,18 +50,18 @@
       <Products Ref="5" type="DataTableSource" isKey="true">
         <Alias>Products</Alias>
         <Columns isList="true" count="12">
-          <value>UnitsOnOrder,System.Double</value>
-          <value>UnitsInStock,System.Double</value>
-          <value>UnitPrice,System.Double</value>
-          <value>Tax,System.Double</value>
-          <value>SupplierID,System.String</value>
-          <value>ReorderLevel,System.Double</value>
-          <value>QuantityPerUnit,System.String</value>
-          <value>ProductName,System.String</value>
-          <value>ProductID,System.String</value>
-          <value>Discontinued,System.Double</value>
-          <value>Description,System.String</value>
-          <value>CategoryID,System.String</value>
+          <value>ORIGINAL,UnitsOnOrder,UnitsOnOrder,UnitsOnOrder,System.Double,e333cfe94dbf45659a5eba4bef06c343</value>
+          <value>ORIGINAL,UnitsInStock,UnitsInStock,UnitsInStock,System.Double,f4c57f84402e49f0981501bc8f126354</value>
+          <value>ORIGINAL,UnitPrice,UnitPrice,UnitPrice,System.Double,_x0032_a69b9a6d291415a9a8a19aa587d8864</value>
+          <value>ORIGINAL,Tax,Tax,Tax,System.Double,_x0031_e8bc1415057428c900b0925b5ae27e1</value>
+          <value>ORIGINAL,SupplierID,SupplierID,SupplierID,System.String,db3a788e02744b47a77b7678b86f8353</value>
+          <value>ORIGINAL,ReorderLevel,ReorderLevel,ReorderLevel,System.Double,_x0031_9e5700389914125ac0770d6f27b92d4</value>
+          <value>ORIGINAL,QuantityPerUnit,QuantityPerUnit,QuantityPerUnit,System.String,ec2a8044191943f29a5705fc6deb0e4a</value>
+          <value>ORIGINAL,ProductName,ProductName,ProductName,System.String,fd560cf53e004d31baf1cb2128890c74</value>
+          <value>ORIGINAL,ProductID,ProductID,ProductID,System.String,_x0031_bd068058e254ff5b0bb6a73091a32ea</value>
+          <value>ORIGINAL,Discontinued,Discontinued,Discontinued,System.Double,_x0031_38e296b9ea34074bab7e975cfeec83c</value>
+          <value>ORIGINAL,Description,Description,Description,System.String,_x0035_68d8dfed5884a4d8c11c09b62ab2bba</value>
+          <value>ORIGINAL,CategoryID,CategoryID,CategoryID,System.String,_x0034_177f0aa589e4944a9e0ea75544dbadd</value>
         </Columns>
         <Dictionary isRef="1" />
         <Key>16fd64ce2f874e7abc26e89040dc8ba6</Key>
@@ -107,13 +107,13 @@
       <OrderConfirmationViewModel Ref="7" type="Stimulsoft.Report.Dictionary.StiBusinessObjectSource" isKey="true">
         <Alias>OrderConfirmationViewModel</Alias>
         <Columns isList="true" count="7">
-          <value>CustomerID,System.Int32</value>
-          <value>CustomerName,System.String</value>
-          <value>Email,System.String</value>
-          <value>PhoneNumber,System.String</value>
-          <value>OrderID,System.Int32</value>
-          <value>OrderDate,System.DateTime</value>
-          <value>TotalPrice,System.Decimal</value>
+          <value>ORIGINAL,CustomerID,CustomerID,CustomerID,System.Int32,_x0032_0b7f74cd85a43159f8a12b43bab9975</value>
+          <value>ORIGINAL,CustomerName,CustomerName,CustomerName,System.String,c80244ba30f34e96a3a9a6abc6194bee</value>
+          <value>ORIGINAL,Email,Email,Email,System.String,e5b2303e39ed40f489a0d560dc499503</value>
+          <value>ORIGINAL,PhoneNumber,PhoneNumber,PhoneNumber,System.String,_x0037_1c8f961c733456684f30c713dee0545</value>
+          <value>ORIGINAL,OrderID,OrderID,OrderID,System.Int32,_x0033_b76b4b4f9f0487fbb425fdd090aaf87</value>
+          <value>ORIGINAL,OrderDate,OrderDate,OrderDate,System.DateTime,_x0038_ab2e5523e574c9183792cb89ceb3238</value>
+          <value>ORIGINAL,TotalPrice,TotalPrice,TotalPrice,System.Decimal,_x0036_18de06565054a52a786de79ba04b751</value>
         </Columns>
         <Dictionary isRef="1" />
         <Key>909642d689cd48328e89bd807047d5be</Key>
@@ -925,11 +925,11 @@
   </ReferencedAssemblies>
   <ReportAlias>Order</ReportAlias>
   <ReportAuthor>Stimulsoft</ReportAuthor>
-  <ReportChanged>1/10/2025 12:50:48 AM</ReportChanged>
+  <ReportChanged>1/10/2025 3:31:01 PM</ReportChanged>
   <ReportCreated>11/12/2017 10:11:55 PM</ReportCreated>
   <ReportDescription>The sample demonstrates how to create Order</ReportDescription>
   <ReportFile>C:\Users\arnaud.bury\Desktop\Bachelorproef\BPTestProject\BP_Document_Generation\BP_Document_Generation\Reports\OrderConfirmation.mrt</ReportFile>
-  <ReportGuid>1663d1176c3e4465b4bd7372b5be3b77</ReportGuid>
+  <ReportGuid>609a476a4b57409f9950b31ef607e5cf</ReportGuid>
   <ReportName>Order</ReportName>
   <ReportUnit>HundredthsOfInch</ReportUnit>
   <ReportVersion>2025.1.2.0</ReportVersion>
